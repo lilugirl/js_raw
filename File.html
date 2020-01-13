@@ -1,6 +1,12 @@
 // 更多的关于文件操作的教程 https://www.html5rocks.com/zh/tutorials/file/filesystem/
 
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+
 // 文件操作
+
 <script>
 if(window.File && window.FileReader && window.FileList){
    // 支持文件操作API
@@ -9,17 +15,12 @@ if(window.File && window.FileReader && window.FileList){
 
 
  <input type="file" multiple>
-  <script>
-     if(window.File && window.FileReader && window.FileList){
-       // 支持文件操作API
-       console.log('支持文件操作API');
+ <script>
+    var input =$("input[type=file]");
+    input.change(function(){
+    var files =this.files;
+    for(var i=0; i<files.length; i++){
+       console.log('type',files[i].type);
      }
-
-     var input =$("input[type=file]");
-     input.change(function(){
-       var files =this.files;
-       for(var i=0; i<files.length; i++){
-         console.log('type',files[i].type);
-       }
-     })
-  </script>
+   })
+ </script>
