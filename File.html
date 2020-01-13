@@ -5,17 +5,16 @@
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
   crossorigin="anonymous"></script>
 
-// 文件操作
-
+// 文件操作浏览器支持
 <script>
 if(window.File && window.FileReader && window.FileList){
    // 支持文件操作API
 }
 </script>
 
-
- <input type="file" multiple>
- <script>
+// 文件信息获取
+<input type="file" multiple>
+<script>
     var input =$("input[type=file]");
     input.change(function(){
     var files =this.files;
@@ -23,4 +22,4 @@ if(window.File && window.FileReader && window.FileList){
        console.log('type',files[i].type);
      }
    })
- </script>
+</script>
